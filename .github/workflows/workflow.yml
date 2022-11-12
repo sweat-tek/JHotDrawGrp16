@@ -1,5 +1,5 @@
 name: pipeline
-on: [push, pull_request]
+on: push
 
 jobs: 
   cloneDown:
@@ -14,21 +14,21 @@ jobs:
           name: code
           path: . 
 
-build:
-  runs-on: ubuntu-latest
-  needs: cloneDown
-  steps:
-    - name: dowload-repo
-      uses: actions/download-artifact@v2
-      with: 
-        name: code
-        path: .
+  build:
+    runs-on: ubuntu-latest
+    needs: cloneDown
+    steps:
+      - name: dowload-repo
+        uses: actions/download-artifact@v2
+        with: 
+          name: code
+          path: .
 
-    - task: Maven@4
-      inputs:
-        mavenPomFile: 'pom.xml'
-        mavenOptions: '-Xmx3072m'
-        javaHomeOption: 'JDKVersion'
-        jdkVersionOption: '11'
+      - task: Maven@4
+        inputs:
+          mavenPomFile: 'pom.xml'
+          mavenOptions: '-Xmx3072m'
+          javaHomeOption: 'JDKVersion'
+          jdkVersionOption: '11'
 
 
