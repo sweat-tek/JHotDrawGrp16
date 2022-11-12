@@ -23,12 +23,3 @@ jobs:
         with: 
           name: code
           path: .
-
-      - task: Maven@4
-        inputs:
-          mavenPomFile: 'pom.xml'
-          mavenOptions: '-Xmx3072m'
-          javaHomeOption: 'JDKVersion'
-          jdkVersionOption: '11'
-
-
