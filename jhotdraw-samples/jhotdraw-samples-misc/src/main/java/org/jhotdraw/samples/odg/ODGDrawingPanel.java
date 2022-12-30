@@ -23,6 +23,7 @@ import org.jhotdraw.draw.Drawing;
 import org.jhotdraw.draw.DrawingEditor;
 import org.jhotdraw.draw.DrawingView;
 import org.jhotdraw.draw.action.*;
+import org.jhotdraw.draw.figure.EllipseFigure;
 import org.jhotdraw.draw.tool.CreationTool;
 import org.jhotdraw.draw.tool.TextAreaCreationTool;
 import org.jhotdraw.gui.JPopupButton;
@@ -36,8 +37,12 @@ import org.jhotdraw.samples.svg.figures.SVGPathFigure;
 import org.jhotdraw.samples.svg.figures.SVGRectFigure;
 import org.jhotdraw.samples.svg.figures.SVGTextAreaFigure;
 import org.jhotdraw.samples.svg.figures.SVGTextFigure;
+import org.jhotdraw.samples.svg.figures.SVGEllipseCreator;
 import org.jhotdraw.undo.UndoRedoManager;
 import org.jhotdraw.util.*;
+
+
+
 
 /**
  * ODGDrawingPanel.
@@ -52,6 +57,8 @@ public class ODGDrawingPanel extends JPanel {
     private UndoRedoManager undoManager;
     private Drawing drawing;
     private DrawingEditor editor;
+
+    private SVGEllipseCreator ellipseCreator = new SVGEllipseCreator();
 
     /**
      * Creates new instance.
@@ -83,6 +90,7 @@ public class ODGDrawingPanel extends JPanel {
         pb.addSeparator();
         pb.add(undoManager.getUndoAction());
         pb.add(undoManager.getRedoAction());
+
         // FIXME - We need a toggle grid action
         // pb.addSeparator();
         // pb.add(new ToggleGridAction(editor));
@@ -164,7 +172,7 @@ public class ODGDrawingPanel extends JPanel {
         attributes.put(AttributeKeys.FILL_COLOR, Color.white);
         attributes.put(AttributeKeys.STROKE_COLOR, Color.black);
         ButtonFactory.addToolTo(tb, editor, new CreationTool(new SVGRectFigure(), attributes), "edit.createRectangle", drawLabels);
-        ButtonFactory.addToolTo(tb, editor, new CreationTool(new SVGEllipseFigure(), attributes), "edit.createEllipse", drawLabels);
+        ButtonFactory.addToolTo(tb, editor, new CreationTool(ellipseCreator.createEmptyEllipseFigure(), attributes), "edit.createEllipse", drawLabels);
         ButtonFactory.addToolTo(tb, editor, new PathTool(new SVGPathFigure(), new SVGBezierFigure(true), attributes), "edit.createPolygon", drawLabels);
         attributes = new HashMap<AttributeKey<?>, Object>();
         attributes.put(AttributeKeys.FILL_COLOR, null);

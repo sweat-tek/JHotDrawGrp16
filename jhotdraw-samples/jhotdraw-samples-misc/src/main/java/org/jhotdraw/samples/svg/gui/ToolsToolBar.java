@@ -29,14 +29,7 @@ import org.jhotdraw.samples.svg.PathTool;
 import org.jhotdraw.samples.svg.SVGCreateFromFileTool;
 import org.jhotdraw.samples.svg.action.CombineAction;
 import org.jhotdraw.samples.svg.action.SplitAction;
-import org.jhotdraw.samples.svg.figures.SVGBezierFigure;
-import org.jhotdraw.samples.svg.figures.SVGEllipseFigure;
-import org.jhotdraw.samples.svg.figures.SVGGroupFigure;
-import org.jhotdraw.samples.svg.figures.SVGImageFigure;
-import org.jhotdraw.samples.svg.figures.SVGPathFigure;
-import org.jhotdraw.samples.svg.figures.SVGRectFigure;
-import org.jhotdraw.samples.svg.figures.SVGTextAreaFigure;
-import org.jhotdraw.samples.svg.figures.SVGTextFigure;
+import org.jhotdraw.samples.svg.figures.*;
 import org.jhotdraw.util.*;
 
 /**
@@ -47,6 +40,8 @@ import org.jhotdraw.util.*;
  */
 public class ToolsToolBar extends AbstractToolBar {
 
+
+    SVGEllipseCreator ellipseCreator = new SVGEllipseCreator();
     private static final long serialVersionUID = 1L;
 
     /**
@@ -99,7 +94,7 @@ public class ToolsToolBar extends AbstractToolBar {
                 gbc.gridy = 1;
                 gbc.insets = new Insets(3, 0, 0, 0);
                 p.add(btn, gbc);
-                btn = ButtonFactory.addToolTo(this, editor, creationTool = new CreationTool(new SVGEllipseFigure(), attributes), "createEllipse", labels);
+                btn = ButtonFactory.addToolTo(this, editor, creationTool = new CreationTool(ellipseCreator.createEmptyEllipseFigure(), attributes), "createEllipse", labels);
                 creationTool.setToolDoneAfterCreation(false);
                 btn.setUI((PaletteButtonUI) PaletteButtonUI.createUI(btn));
                 gbc = new GridBagConstraints();

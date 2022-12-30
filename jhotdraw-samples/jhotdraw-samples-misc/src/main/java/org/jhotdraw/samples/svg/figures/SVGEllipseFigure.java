@@ -47,9 +47,13 @@ public class SVGEllipseFigure extends SVGAttributedFigure implements SVGFigure {
     /**
      * Creates a new instance.
      */
+    /*
     public SVGEllipseFigure() {
         this(0, 0, 0, 0);
     }
+
+     */
+
 
     @FeatureEntryPoint("SVGEllipseFigure")
     public SVGEllipseFigure(double x, double y, double width, double height) {
