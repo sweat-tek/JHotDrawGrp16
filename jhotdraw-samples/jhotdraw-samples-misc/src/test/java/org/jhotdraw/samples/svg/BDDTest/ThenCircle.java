@@ -8,7 +8,7 @@ import org.jhotdraw.draw.figure.Figure;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+
 
 
 public class ThenCircle extends Stage<ThenCircle>{

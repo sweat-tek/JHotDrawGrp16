@@ -70,7 +70,7 @@ public class SVGEllipseFigure extends SVGAttributedFigure implements SVGFigure {
     protected boolean exists(){
         if (ellipse.width> 0 && ellipse.height> 0){
             return true;
-        }else{
+        }else {
             return false;
         }
     }

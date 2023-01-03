@@ -46,7 +46,7 @@ public class MainTest {
     @Test
     public void containsMethodTest(){
         //point in center of ellipse
-        Point2D.Double p = new Point2D.Double(1,2);
+        Point2D.Double p = new Point2D.Double(1, 2);
         assertTrue(testfigure.contains(p));
 
 
