@@ -47,36 +47,33 @@ public class SVGEllipseFigure extends SVGAttributedFigure implements SVGFigure {
     /**
      * Creates a new instance.
      */
-    /*
-    public SVGEllipseFigure() {
-        this(0, 0, 0, 0);
-    }
-
-     */
-
-
     //@FeatureEntryPoint("SVGEllipseFigure")
     public SVGEllipseFigure(double x, double y, double width, double height) {
         ellipse = new Ellipse2D.Double(x, y, width, height);
         SVGAttributeKeys.setDefaults(this);
         setConnectable(false);
     }
-
     // DRAWING
     @Override
     protected void drawFill(Graphics2D g) {
-        if (ellipse.width > 0 && ellipse.height > 0) {
+        if (exists()) {
             g.fill(ellipse);
         }
     }
-
     @Override
     protected void drawStroke(Graphics2D g) {
-        if (ellipse.width > 0 && ellipse.height > 0) {
+        if (exists()) {
             g.draw(ellipse);
         }
     }
 
+    protected boolean exists(){
+        if (ellipse.width> 0 && ellipse.height> 0){
+            return true;
+        }else{
+            return false;
+        }
+    }
     // SHAPE AND BOUNDS
     public double getX() {
         return ellipse.x;
