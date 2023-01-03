@@ -7,6 +7,9 @@ import org.jhotdraw.draw.figure.Figure;
 
 import java.util.List;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+
 
 public class ThenCircle extends Stage<ThenCircle>{
 
@@ -14,8 +17,9 @@ public class ThenCircle extends Stage<ThenCircle>{
     DefaultDrawingView view;
     public ThenCircle thereIsACircleOnTheDrawing(){
         List<Figure> figuresOnDrawing = view.getDrawing().getFiguresFrontToBack();
-        System.out.println(figuresOnDrawing.size());
+        assertEquals(1, figuresOnDrawing.size());
+        System.out.println(figuresOnDrawing.get(0).getClass());
+        
         return self();
-
     }
 }

@@ -4,6 +4,8 @@ package org.jhotdraw.samples.svg.UnitTest;
 import org.jhotdraw.samples.svg.figures.SVGEllipseFigure;
 import org.junit.Test;
 
+import java.awt.geom.Point2D;
+
 import static org.junit.Assert.*;
 
 public class MainTest {
@@ -20,6 +22,7 @@ public class MainTest {
      */
 
     // Unit tests on class SVGEllipseFigure
+    //testfigure
     SVGEllipseFigure testfigure = new SVGEllipseFigure(1.0, 2.0, 3.0, 4.0);
 
     @Test
@@ -41,7 +44,11 @@ public class MainTest {
     }
 
     @Test
-    public void anotherTest(){
+    public void containsMethodTest(){
+        //point in center of ellipse
+        Point2D.Double p = new Point2D.Double(1,2);
+        assertTrue(testfigure.contains(p));
+
 
 
     }
