@@ -18,7 +18,7 @@ jobs:
 
 
       - name: mavenTesting
-        working-directory: ./JHotDrawGrp16
+        working-directory:
         run: mvn test
 
       - name: mavenBuild
