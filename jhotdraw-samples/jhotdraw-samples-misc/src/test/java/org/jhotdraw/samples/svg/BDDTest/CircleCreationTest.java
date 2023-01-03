@@ -8,11 +8,11 @@ public class CircleCreationTest extends ScenarioTest<GivenCircle, WhenCircle, Th
 
     @Test
     public final void creatingACircle() {
-        given().someState();
+        given().anEmptyDrawing();
 
-        when().someAction();
+        when().circleIsDrawn();
 
-        then().some_outcome();
+        then().thereIsACircleOnTheDrawing();
 
 
     }
