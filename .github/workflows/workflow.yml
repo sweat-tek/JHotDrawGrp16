@@ -1,11 +1,11 @@
 
-name: pipeline
+name: building_and_testing_pipeline
 on:
   push:
   pull_request:
 
 jobs:
-  Test-and-Build:
+  Test:
     runs-on: ubuntu-latest
 
     steps:
@@ -15,12 +15,19 @@ jobs:
         with:
           java-version: '11'
           distribution: 'adopt'
-
-
       - name: mavenTesting
-        working-directory:
         run: mvn test
-
+  Build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: javaSetup
+        uses: actions/setup-java@v2
+        with:
+          java-version: '11'
+          distribution: 'adopt'
       - name: mavenBuild
-        working-directory:
         run: mvn --batch-mode --update-snapshots verify
+
+
+
