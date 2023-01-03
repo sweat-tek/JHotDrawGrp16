@@ -22,5 +22,5 @@ jobs:
         run: mvn test
 
       - name: mavenBuild
-        working-directory: ./JHotDraw
+        working-directory:
         run: mvn --batch-mode --update-snapshots verify
