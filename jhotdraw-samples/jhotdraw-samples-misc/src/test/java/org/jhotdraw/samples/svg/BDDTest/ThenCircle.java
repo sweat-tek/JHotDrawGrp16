@@ -19,7 +19,7 @@ public class ThenCircle extends Stage<ThenCircle>{
         List<Figure> figuresOnDrawing = view.getDrawing().getFiguresFrontToBack();
         assertEquals(1, figuresOnDrawing.size());
         System.out.println(figuresOnDrawing.get(0).getClass());
-        
+
         return self();
     }
 }
