@@ -7,7 +7,7 @@
  */
 package org.jhotdraw.samples.svg.gui;
 
-import dk.sdu.mmmi.featuretracer.lib.FeatureEntryPoint;
+//import dk.sdu.mmmi.featuretracer.lib.FeatureEntryPoint;
 import org.jhotdraw.draw.figure.Figure;
 import java.awt.*;
 import java.net.*;
@@ -74,7 +74,7 @@ public class SelectionOpacityIcon extends javax.swing.ImageIcon {
     }
 
     @Override
-    @FeatureEntryPoint("PaintIcon")
+    //@FeatureEntryPoint("PaintIcon")
     public void paintIcon(java.awt.Component c, java.awt.Graphics gr, int x, int y) {
         Graphics2D g = (Graphics2D) gr;
         super.paintIcon(c, g, x, y);

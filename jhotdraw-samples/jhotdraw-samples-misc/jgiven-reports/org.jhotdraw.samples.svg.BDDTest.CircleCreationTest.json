@@ -1,0 +1,76 @@
+{
+  "className": "org.jhotdraw.samples.svg.BDDTest.CircleCreationTest",
+  "name": "Circle Creation",
+  "scenarios": [
+    {
+      "className": "org.jhotdraw.samples.svg.BDDTest.CircleCreationTest",
+      "testMethodName": "creatingACircle",
+      "description": "Creating a circle",
+      "tagIds": [],
+      "explicitParameters": [],
+      "derivedParameters": [],
+      "scenarioCases": [
+        {
+          "caseNr": 1,
+          "steps": [
+            {
+              "name": "some state",
+              "words": [
+                {
+                  "value": "Given",
+                  "isIntroWord": true
+                },
+                {
+                  "value": "some state"
+                }
+              ],
+              "status": "PASSED",
+              "durationInNanos": 7024100,
+              "depth": 0,
+              "parentFailed": false
+            },
+            {
+              "name": "some action",
+              "words": [
+                {
+                  "value": "When",
+                  "isIntroWord": true
+                },
+                {
+                  "value": "some action"
+                }
+              ],
+              "status": "PASSED",
+              "durationInNanos": 400601,
+              "depth": 0,
+              "parentFailed": false
+            },
+            {
+              "name": "some outcome",
+              "words": [
+                {
+                  "value": "Then",
+                  "isIntroWord": true
+                },
+                {
+                  "value": "some outcome"
+                }
+              ],
+              "status": "PASSED",
+              "durationInNanos": 220499,
+              "depth": 0,
+              "parentFailed": false
+            }
+          ],
+          "explicitArguments": [],
+          "derivedArguments": [],
+          "status": "SUCCESS",
+          "durationInNanos": 38864200
+        }
+      ],
+      "casesAsTable": false,
+      "durationInNanos": 38864200
+    }
+  ],
+  "tagMap": {}
+}

@@ -6,8 +6,8 @@ import org.junit.Test;
 
 public class CircleCreationTest extends ScenarioTest<GivenCircle, WhenCircle, ThenCircle> {
 
-@Test
-    public void creatingACircle() {
+    @Test
+    public final void creatingACircle() {
         given().someState();
 
         when().someAction();

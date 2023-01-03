@@ -9,7 +9,7 @@ package org.jhotdraw.draw.action;
 
 import java.util.*;
 
-import dk.sdu.mmmi.featuretracer.lib.FeatureEntryPoint;
+//import dk.sdu.mmmi.featuretracer.lib.FeatureEntryPoint;
 import org.jhotdraw.draw.DrawingEditor;
 import org.jhotdraw.draw.figure.Figure;
 import org.jhotdraw.util.ResourceBundleUtil;
@@ -40,7 +40,7 @@ public class SelectSameAction extends AbstractSelectedAction {
         selectSame();
     }
 
-    @FeatureEntryPoint("SelectSame")
+    //@FeatureEntryPoint("SelectSame")
     public void selectSame() {
         HashSet<Class<?>> selectedClasses = new HashSet<>();
         for (Figure selected : getView().getSelectedFigures()) {
