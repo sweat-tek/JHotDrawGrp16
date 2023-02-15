@@ -128,9 +128,7 @@ public class TextFigure extends AbstractAttributedDecoratedFigure
     @Override
     public Rectangle2D.Double getBounds() {
         TextLayout layout = getTextLayout();
-        Rectangle2D.Double r = new Rectangle2D.Double(origin.x, origin.y, layout.getAdvance(),
-                layout.getAscent() + layout.getDescent());
-        return r;
+        return new Rectangle2D.Double(origin.x, origin.y, layout.getAdvance(),layout.getAscent() + layout.getDescent());
     }
 
     @Override
@@ -158,11 +156,8 @@ public class TextFigure extends AbstractAttributedDecoratedFigure
                     origin.x, origin.y, layout.getAdvance(), layout.getAscent());
             Rectangle2D lBounds = layout.getBounds();
             if (!lBounds.isEmpty() && !Double.isNaN(lBounds.getX())) {
-                r.add(new Rectangle2D.Double(
-                        lBounds.getX() + origin.x,
-                        (lBounds.getY() + origin.y + layout.getAscent()),
-                        lBounds.getWidth(),
-                        lBounds.getHeight()));
+                r.add(new Rectangle2D.Double(lBounds.getX() + origin.x,
+                        (lBounds.getY() + origin.y + layout.getAscent()), lBounds.getWidth(), lBounds.getHeight()));
             }
             // grow by two pixels to take antialiasing into account
             Geom.grow(r, 2d, 2d);
@@ -262,18 +257,15 @@ public class TextFigure extends AbstractAttributedDecoratedFigure
     @Override
     public Collection<Handle> createHandles(int detailLevel) {
         LinkedList<Handle> handles = new LinkedList<>();
-        switch (detailLevel) {
-            case -1:
-                handles.add(new BoundsOutlineHandle(this, false, true));
-                break;
-            case 0:
-                handles.add(new BoundsOutlineHandle(this));
-                handles.add(new MoveHandle(this, RelativeLocator.northWest()));
-                handles.add(new MoveHandle(this, RelativeLocator.northEast()));
-                handles.add(new MoveHandle(this, RelativeLocator.southWest()));
-                handles.add(new MoveHandle(this, RelativeLocator.southEast()));
-                handles.add(new FontSizeHandle(this));
-                break;
+        if(detailLevel == -1){
+            handles.add(new BoundsOutlineHandle(this, false, true));
+        } else if(detailLevel == 0){
+            handles.add(new BoundsOutlineHandle(this));
+            handles.add(new MoveHandle(this, RelativeLocator.northWest()));
+            handles.add(new MoveHandle(this, RelativeLocator.northEast()));
+            handles.add(new MoveHandle(this, RelativeLocator.southWest()));
+            handles.add(new MoveHandle(this, RelativeLocator.southEast()));
+            handles.add(new FontSizeHandle(this));
         }
         return handles;
     }
