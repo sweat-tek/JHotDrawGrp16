@@ -70,7 +70,7 @@ public class FloatingTextField {
     public void createOverlay(DrawingView view, TextHolderFigure figure) {
         view.getComponent().add(textField, 0);
         textField.setText(figure.getText());
-        textField.setColumns(figure.getTextColumns());
+        textField.setColumns(4);
         textField.selectAll();
         textField.setVisible(true);
         editedFigure = figure;

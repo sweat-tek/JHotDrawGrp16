@@ -90,9 +90,6 @@ public class TextCreationTool extends CreationTool implements ActionListener {
      */
     @Override
     public void mousePressed(MouseEvent e) {
-        // Note: The search sequence used here, must be
-        // consistent with the search sequence used by the
-        // HandleTracker, SelectAreaTracker, DelegationSelectionTool, SelectionTool.
         if (typingTarget != null) {
             endEdit();
             if (isToolDoneAfterCreation()) {
@@ -144,7 +141,6 @@ public class TextCreationTool extends CreationTool implements ActionListener {
             } else {
                 if (createdFigure != null) {
                     getDrawing().remove(getAddedFigure());
-                    // XXX - Fire undoable edit here!!
                 } else {
                     typingTarget.setText("");
                     typingTarget.changed();

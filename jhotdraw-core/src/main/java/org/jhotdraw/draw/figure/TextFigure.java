@@ -177,7 +177,6 @@ public class TextFigure extends AbstractAttributedDecoratedFigure
         return origin.clone();
     }
 
-    // ATTRIBUTES
     /**
      * Gets the text shown by the text figure.
      */
@@ -201,9 +200,6 @@ public class TextFigure extends AbstractAttributedDecoratedFigure
         return 4;
     }
 
-    /**
-     * Gets the number of characters used to expand tabs.
-     */
     @Override
     public int getTabSize() {
         return 8;
@@ -278,16 +274,11 @@ public class TextFigure extends AbstractAttributedDecoratedFigure
     @Override
     public Tool getTool(Point2D.Double p) {
         if (isEditable() && contains(p)) {
-            TextEditingTool t = new TextEditingTool(this);
-            return t;
+            return new TextEditingTool(this);
         }
         return null;
     }
 
-    // CONNECTING
-    // COMPOSITE FIGURES
-    // CLONING
-    // EVENT HANDLING
     @Override
     public void invalidate() {
         super.invalidate();
