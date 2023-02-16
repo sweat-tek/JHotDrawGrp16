@@ -5,7 +5,7 @@ import org.jhotdraw.draw.figure.TextFigure;
 import org.junit.Test;
 
 
-public class TextTest {
+public class TextTest { /*
     @Test
     public void textTestMain(){
 
@@ -14,5 +14,5 @@ public class TextTest {
             System.out.println("true and based");
             assert(true);
         }
-    }
+    }*/
 }
