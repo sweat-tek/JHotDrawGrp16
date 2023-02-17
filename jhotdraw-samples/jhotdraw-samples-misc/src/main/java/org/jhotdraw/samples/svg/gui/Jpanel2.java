@@ -51,9 +51,7 @@ public class Jpanel2 extends Jpanel {
         }
         JPanel p1 = getP1(editor, disposables);
         JPanel p2 = getp2(editor, disposables);
-        JPanel p3 = new JPanel(new GridBagLayout());
-        p3.setOpaque(false);
-
+        JPanel p3 = getp3();
         p.setBorder(new EmptyBorder(5, 5, 5, 8));
         p.removeAll();
         p.setLayout(new GridBagLayout());
@@ -76,6 +74,11 @@ public class Jpanel2 extends Jpanel {
         gbc.anchor = GridBagConstraints.FIRST_LINE_START;
         p.add(p3, gbc);
         return p;
+    }
+    private JPanel getp3(){
+        JPanel panel = new JPanel(new GridBagLayout());
+        panel.setOpaque(false);
+        return panel;
     }
 
     private JPanel getp2(DrawingEditor editor, LinkedList<Disposable> disposables) {
