@@ -37,7 +37,7 @@ public class Jpanel1 extends Jpanel {
     }
 
     @Override
-    public JPanel getjPanel(DrawingEditor editor, LinkedList<Disposable> disposables) {
+    public JPanel getJpanel(DrawingEditor editor, LinkedList<Disposable> disposables) {
         JPanel p = new JPanel();
         p.setOpaque(false);
         p.setBorder(new EmptyBorder(5, 5, 5, 8));

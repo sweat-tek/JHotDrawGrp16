@@ -42,7 +42,7 @@ public class Jpanel2 extends Jpanel {
     }
 
     @Override
-    public JPanel getjPanel(DrawingEditor editor, LinkedList<Disposable> disposables) {
+    public JPanel getJpanel(DrawingEditor editor, LinkedList<Disposable> disposables) {
         JPanel p = new JPanel();
         p.setOpaque(false);
         // Abort if no editor is put

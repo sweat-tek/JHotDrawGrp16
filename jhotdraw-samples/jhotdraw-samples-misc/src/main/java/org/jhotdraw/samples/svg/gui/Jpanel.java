@@ -8,7 +8,7 @@ import java.util.LinkedList;
 
 public class Jpanel {
 
-    public JPanel getjPanel(DrawingEditor editor, LinkedList<Disposable> disposables) {
+    public JPanel getJpanel(DrawingEditor editor, LinkedList<Disposable> disposables) {
         return new JPanel();
     };
 }

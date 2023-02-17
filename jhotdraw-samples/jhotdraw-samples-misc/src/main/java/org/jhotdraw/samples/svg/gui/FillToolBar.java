@@ -53,7 +53,7 @@ public class FillToolBar extends AbstractToolBar {
         } else if (state == 2) {
             jpanel = new Jpanel2();
         }
-        return jpanel.getjPanel(editor, disposables);
+        return jpanel.getJpanel(editor, disposables);
     }
 
     @Override
