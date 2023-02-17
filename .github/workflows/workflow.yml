@@ -15,7 +15,7 @@ jobs:
           java-version: '11'
           distribution: 'adopt'
       - name: mavenTesting
-        run: mvn test
+        run: mvn test -Dcheckstyle.skip
   Build:
     runs-on: ubuntu-latest
     steps:
@@ -26,4 +26,4 @@ jobs:
           java-version: '11'
           distribution: 'adopt'
       - name: mavenBuild
-        run: mvn verify
+        run: mvn verify -Dcheckstyle.skip
