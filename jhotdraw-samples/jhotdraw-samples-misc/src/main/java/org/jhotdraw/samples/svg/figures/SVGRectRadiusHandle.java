@@ -126,23 +126,21 @@ public class SVGRectRadiusHandle extends AbstractHandle {
                 if (newArc.height > 0) {
                     newArc.height = Math.max(0, newArc.height - 1);
                 }
-                evt.consume();
                 break;
             case KeyEvent.VK_DOWN:
                 newArc.height = Math.min(owner.getHeight(), newArc.height + 1);
-                evt.consume();
                 break;
             case KeyEvent.VK_LEFT:
                 if (newArc.width > 0) {
                     newArc.width = Math.max(0, newArc.width - 1);
                 }
-                evt.consume();
                 break;
             case KeyEvent.VK_RIGHT:
                 newArc.width = Math.min(owner.getWidth(), newArc.width + 1);
-                evt.consume();
                 break;
         }
+        //added evt. consume
+        evt.consume();
         if (!newArc.equals(oldArc)) {
             owner.willChange();
             owner.setArc(newArc.width, newArc.height);

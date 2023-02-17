@@ -68,7 +68,7 @@ import org.jhotdraw.util.prefs.PreferencesUtil;
  * @version $Id$
  */
 public abstract class AbstractApplication extends AbstractBean implements Application {
-
+//Oskar
     private static final long serialVersionUID = 1L;
     private LinkedList<View> views = new LinkedList<>();
     private Collection<View> unmodifiableViews;
