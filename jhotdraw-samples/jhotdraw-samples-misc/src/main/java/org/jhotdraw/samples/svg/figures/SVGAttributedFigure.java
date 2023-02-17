@@ -7,7 +7,6 @@
  */
 package org.jhotdraw.samples.svg.figures;
 
-import dk.sdu.mmmi.featuretracer.lib.FeatureEntryPoint;
 import org.jhotdraw.draw.figure.AbstractAttributedFigure;
 import java.awt.*;
 import java.awt.event.*;
@@ -76,7 +75,7 @@ public abstract class SVGAttributedFigure extends AbstractAttributedFigure {
      * This method is invoked before the rendered image of the figure is
      * composited.
      */
-    @FeatureEntryPoint("DrawFigure")
+    //@FeatureEntryPoint("DrawFigure")
     public void drawFigure(Graphics2D g) {
         AffineTransform savedTransform = null;
         if (get(TRANSFORM) != null) {
