@@ -66,7 +66,7 @@ public class TextCreationTool extends CreationTool implements ActionListener {
     /**
      * Creates a new instance.
      */
-    @FeatureEntryPoint("TextCreationTool1")
+
     public TextCreationTool(TextHolderFigure prototype) {
         super(prototype);
     }
@@ -74,7 +74,7 @@ public class TextCreationTool extends CreationTool implements ActionListener {
     /**
      * Creates a new instance.
      */
-    @FeatureEntryPoint("TextCreationTool2")
+
     public TextCreationTool(TextHolderFigure prototype, Map<AttributeKey<?>, Object> attributes) {
         super(prototype, attributes);
     }
@@ -114,7 +114,7 @@ public class TextCreationTool extends CreationTool implements ActionListener {
     public void mouseDragged(java.awt.event.MouseEvent e) {
     }
 
-    @FeatureEntryPoint("TextBeginEdit")
+
     protected void beginEdit(TextHolderFigure textHolder) {
         if (textField == null) {
             textField = new FloatingTextField();
@@ -132,7 +132,6 @@ public class TextCreationTool extends CreationTool implements ActionListener {
     public void mouseReleased(MouseEvent evt) {
     }
 
-    @FeatureEntryPoint("TextEndEdit")
     protected void endEdit() {
         if (typingTarget != null) {
             typingTarget.willChange();

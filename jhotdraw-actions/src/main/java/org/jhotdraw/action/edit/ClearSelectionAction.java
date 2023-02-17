@@ -73,7 +73,7 @@ public class ClearSelectionAction extends AbstractSelectionAction {
     }
 
     @Override
-    @FeatureEntryPoint("DeselectAllActionPerformed")
+
     public void actionPerformed(ActionEvent evt) {
         JComponent c = target;
         if (c == null && (KeyboardFocusManager.getCurrentKeyboardFocusManager().
