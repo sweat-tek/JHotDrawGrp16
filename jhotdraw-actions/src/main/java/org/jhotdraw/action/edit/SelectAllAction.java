@@ -72,7 +72,7 @@ public class SelectAllAction extends AbstractSelectionAction {
     }
 
     @Override
-    @FeatureEntryPoint("SelectAllActionPerformed")
+    //@FeatureEntryPoint("SelectAllActionPerformed")
     public void actionPerformed(ActionEvent evt) {
         JComponent c = target;
         if (c == null && (KeyboardFocusManager.getCurrentKeyboardFocusManager().
