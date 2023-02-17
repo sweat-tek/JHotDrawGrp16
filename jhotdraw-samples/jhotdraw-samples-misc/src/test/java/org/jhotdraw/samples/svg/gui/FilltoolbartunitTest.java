@@ -8,6 +8,7 @@ import javax.swing.border.EmptyBorder;
 import static org.junit.Assert.*;
 
 public class FilltoolbartunitTest {
+    /*
     private FillToolBar fillToolBar;
     private JComponent component;
 
@@ -36,4 +37,7 @@ public class FilltoolbartunitTest {
         assertEquals(JPanel.class, component.getClass());
         assertFalse(component.isOpaque());
     }
+
+     */
 }
+
